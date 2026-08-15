@@ -95,35 +95,53 @@ const validateContact = [
  * Validation rules for Volunteer Registration
  */
 const validateVolunteer = [
-  body(["fullName", "Name", "name"])
-    .optional({ checkFalsy: true })
+  body("fullName")
     .trim()
+    .notEmpty()
+    .withMessage("Full name is required")
+    .bail()
     .isLength({ min: 2, max: 100 })
     .withMessage("Name must be between 2 and 100 characters")
     .escape(),
-  body(["email", "Email"])
-    .optional({ checkFalsy: true })
+
+  body("email")
     .trim()
+    .notEmpty()
+    .withMessage("Email is required")
+    .bail()
     .isEmail()
     .withMessage("Must be a valid email address")
     .normalizeEmail(),
-  body(["phone", "Phone"])
-    .optional({ checkFalsy: true })
+
+  body("phone")
     .trim()
+    .notEmpty()
+    .withMessage("Phone number is required")
+    .bail()
     .matches(/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s./0-9]*$/)
     .withMessage("Must be a valid phone number"),
-  body(["city", "City"])
-    .optional({ checkFalsy: true })
+
+  body("city")
     .trim()
+    .optional({ checkFalsy: true })
     .isLength({ max: 100 })
     .withMessage("City cannot exceed 100 characters")
     .escape(),
-  body(["message", "Message"])
-    .optional({ checkFalsy: true })
+
+  body("interest")
     .trim()
+    .optional({ checkFalsy: true })
+    .isLength({ max: 200 })
+    .withMessage("Area of interest cannot exceed 200 characters")
+    .escape(),
+
+  body("message")
+    .trim()
+    .optional({ checkFalsy: true })
     .isLength({ max: 1000 })
     .withMessage("Message cannot exceed 1000 characters")
     .escape(),
+
   validateResult,
 ];
 

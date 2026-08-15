@@ -3,24 +3,23 @@ const Volunteer = require("../models/VolunteerModel");
 // Add Volunteer
 const addVolunteer = async (req, res, next) => {
   try {
-    const {
-      fullName, Name, name,
-      email, Email,
-      phone, Phone,
-      city, City,
-      interest, Subject, AreaOfInterest,
-      message, Message
-    } = req.body;
+const {
+  fullName,
+  email,
+  phone,
+  city,
+  interest,
+  message,
+} = req.body;
 
-    const volunteerData = {
-      fullName: fullName || Name || name || "Volunteer",
-      email: (email || Email || "").toLowerCase().trim(),
-      phone: phone || Phone || "",
-      city: city || City || "",
-      interest: interest || Subject || AreaOfInterest || "General",
-      message: message || Message || "Registered as Volunteer",
-    };
-
+const volunteerData = {
+  fullName: fullName.trim(),
+  email: email.toLowerCase().trim(),
+  phone: phone.trim(),
+  city: city?.trim() || "",
+  interest: interest?.trim() || "",
+  message: message?.trim() || "",
+};
     const volunteer = await Volunteer.create(volunteerData);
 
     res.status(201).json({
