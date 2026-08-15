@@ -1,0 +1,38 @@
+# ========================
+# Dependencies
+# ========================
+node_modules/
+
+# ========================
+# Environment / Secrets
+# ========================
+.env
+.env.local
+.env.production
+.env.staging
+
+# ========================
+# Uploaded Files (user content)
+# Store these on Cloudinary or S3 in production
+# ========================
+uploads/blogs/*
+uploads/programs/*
+uploads/gallery/*
+!uploads/blogs/.gitkeep
+!uploads/programs/.gitkeep
+!uploads/gallery/.gitkeep
+
+# ========================
+# Logs
+# ========================
+logs/
+*.log
+npm-debug.log*
+
+# ========================
+# OS & Editor files
+# ========================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

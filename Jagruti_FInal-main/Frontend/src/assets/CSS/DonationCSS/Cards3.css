@@ -1,0 +1,133 @@
+/* ===========================
+   SECTION
+=========================== */
+
+.transparency-section{
+    padding:50px 0;
+    background:#fff;
+}
+
+/* ===========================
+   BOX
+=========================== */
+
+.transparency-box{
+
+    background:#07174A;
+
+    border-radius:22px;
+
+    padding:45px 40px;
+
+    color:#fff;
+
+}
+
+/* ===========================
+   TITLE
+=========================== */
+
+.transparency-box h2{
+
+    text-align:center;
+
+    font-family:"Poppins";
+
+    font-size:38px;
+
+    font-weight:700;
+
+    margin-bottom:12px;
+
+}
+
+
+
+/* ===========================
+   ITEMS
+=========================== */
+
+.transparency-item{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:18px;
+
+    padding:15px 30px;
+
+    border-right:1px solid rgba(255,255,255,.18);
+
+}
+
+.transparency-item:last-child{
+
+    border-right:none;
+
+}
+
+/* ===========================
+   ICON
+=========================== */
+
+.transparency-icon{
+
+    width:60px;
+    height:60px;
+
+    background:#6D8CFF;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-shrink:0;
+
+}
+
+.transparency-icon svg{
+
+    color:#fff;
+
+    font-size:24px;
+
+}
+
+/* ===========================
+   TEXT
+=========================== */
+
+.transparency-item h3{
+
+    margin:0;
+
+    font-family:"Poppins";
+
+    font-size:34px;
+
+    font-weight:700;
+
+    color:#fff;
+
+}
+
+.transparency-item p{
+
+    margin-top:6px;
+
+    font-family:"Inter";
+
+    font-size:15px;
+
+    line-height:1.6;
+
+    color:rgba(255,255,255,.9);
+
+}

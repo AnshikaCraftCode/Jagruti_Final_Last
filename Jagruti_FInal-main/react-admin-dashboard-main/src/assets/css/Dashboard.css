@@ -1,0 +1,599 @@
+/* ===========================
+   DASHBOARD
+=========================== */
+
+.dashboard-page{
+    background:#f6f8fc;
+    min-height:100vh;
+    padding:25px;
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+.dashboard-hero{
+    background:linear-gradient(135deg,#031436,#123A82);
+    color:#fff;
+    border-radius:22px;
+    padding:40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:30px;
+    box-shadow:0 15px 40px rgba(3,20,54,.15);
+}
+
+.hero-tag{
+    display:inline-block;
+    background:rgba(255,255,255,.15);
+    padding:8px 18px;
+    border-radius:30px;
+    font-size:.85rem;
+    letter-spacing:1px;
+    font-weight:600;
+    margin-bottom:18px;
+}
+
+.dashboard-hero h1{
+    font-size:2.6rem;
+    font-weight:700;
+    margin-bottom:15px;
+    line-height:1.25;
+}
+
+.dashboard-hero p{
+    max-width:600px;
+    opacity:.9;
+    line-height:1.8;
+    margin:0;
+}
+
+.hero-badge{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.2);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    backdrop-filter:blur(8px);
+}
+
+.hero-badge svg{
+    font-size:45px;
+    color:#ff6b6b;
+    margin-bottom:12px;
+}
+
+.hero-badge span{
+    font-weight:600;
+    font-size:.95rem;
+}
+
+/* ===========================
+   SECTION TITLE
+=========================== */
+
+.section-title{
+    margin-bottom:25px;
+}
+
+.section-title h3{
+    color:#031436;
+    font-weight:700;
+    margin-bottom:5px;
+}
+
+.section-title p{
+    color:#6b7280;
+    margin:0;
+}
+
+/* ===========================
+   STATS
+=========================== */
+
+.stat-card{
+    background:#fff;
+    border-radius:20px;
+    padding:25px;
+    display:flex;
+    align-items:center;
+    gap:18px;
+    box-shadow:0 8px 25px rgba(0,0,0,.05);
+    transition:.35s;
+    border:1px solid #edf0f7;
+    height:100%;
+}
+
+.stat-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 35px rgba(0,0,0,.1);
+}
+
+.stat-card small{
+    color:#6b7280;
+    display:block;
+    margin-bottom:5px;
+    font-size:.95rem;
+}
+
+.stat-card h3{
+    margin:0;
+    color:#031436;
+    font-size:2rem;
+    font-weight:700;
+}
+
+.stat-icon{
+    width:70px;
+    height:70px;
+    border-radius:18px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+    font-size:28px;
+    transition:.4s;
+}
+
+.stat-card:hover .stat-icon{
+    transform:rotate(-8deg) scale(1.05);
+}
+
+.stat-icon.navy{
+    background:linear-gradient(135deg,#031436,#123A82);
+}
+
+.stat-icon.red{
+    background:linear-gradient(135deg,#b11226,#e63946);
+}
+
+/* ===========================
+   QUICK ACTIONS
+=========================== */
+
+.action-card{
+    background:#fff;
+    border-radius:20px;
+    padding:25px;
+    display:block;
+    height:100%;
+    border:1px solid #edf0f7;
+    transition:.35s;
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+}
+
+.action-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 18px 35px rgba(0,0,0,.1);
+}
+
+.action-card::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:5px;
+    background:#123A82;
+}
+
+.action-card:nth-child(even)::before{
+    background:#d62839;
+}
+
+.action-icon{
+    width:65px;
+    height:65px;
+    border-radius:18px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+    font-size:26px;
+    margin-bottom:20px;
+    transition:.35s;
+}
+
+.action-card:hover .action-icon{
+    transform:rotate(-10deg) scale(1.08);
+}
+
+.action-icon.navy{
+    background:linear-gradient(135deg,#031436,#123A82);
+}
+
+.action-icon.red{
+    background:linear-gradient(135deg,#b11226,#d62839);
+}
+
+.action-card h5{
+    color:#031436;
+    font-weight:700;
+    margin-bottom:8px;
+}
+
+.action-card p{
+    color:#6b7280;
+    font-size:.95rem;
+    margin-bottom:20px;
+}
+
+.action-arrow{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:#f4f6fb;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#123A82;
+    transition:.35s;
+}
+
+.action-card:hover .action-arrow{
+    background:#123A82;
+    color:#fff;
+}
+/* ==========================================
+   COMMUNITY IMPACT
+========================================== */
+
+.impact-card{
+    margin-top:30px;
+    background:linear-gradient(135deg,#031436,#123A82);
+    border-radius:22px;
+    padding:40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:40px;
+    color:#fff;
+    overflow:hidden;
+    position:relative;
+    box-shadow:0 15px 40px rgba(3,20,54,.18);
+}
+
+.impact-card::before{
+    content:"";
+    position:absolute;
+    right:-80px;
+    top:-80px;
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    background:rgba(255,255,255,.08);
+}
+
+.impact-left{
+    flex:1;
+    position:relative;
+    z-index:2;
+}
+
+.impact-icon{
+    width:70px;
+    height:70px;
+    border-radius:18px;
+    background:rgba(255,255,255,.12);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:22px;
+}
+
+.impact-icon svg{
+    color:#ff6b6b;
+    font-size:30px;
+}
+
+.impact-left h2{
+    font-size:2rem;
+    font-weight:700;
+    margin-bottom:15px;
+}
+
+.impact-left p{
+    line-height:1.8;
+    opacity:.9;
+    max-width:500px;
+    margin-bottom:0;
+}
+
+.impact-right{
+    flex:1;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+    position:relative;
+    z-index:2;
+}
+
+.impact-box{
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.18);
+    border-radius:18px;
+    text-align:center;
+    padding:24px;
+    backdrop-filter:blur(8px);
+    transition:.35s;
+}
+
+.impact-box:hover{
+    transform:translateY(-6px);
+    background:rgba(255,255,255,.18);
+}
+
+.impact-box h3{
+    font-size:2rem;
+    font-weight:700;
+    margin-bottom:8px;
+    color:#fff;
+}
+
+.impact-box span{
+    font-size:.95rem;
+    opacity:.9;
+}
+
+
+/* ==========================================
+   FOUNDATION HIGHLIGHTS
+========================================== */
+
+.highlight-card{
+    background:#fff;
+    border-radius:20px;
+    padding:28px;
+    text-align:center;
+    height:100%;
+    border:1px solid #e9edf5;
+    transition:.35s;
+    box-shadow:0 8px 25px rgba(0,0,0,.05);
+}
+
+.highlight-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 18px 35px rgba(0,0,0,.10);
+}
+
+.highlight-icon{
+    width:72px;
+    height:72px;
+    margin:auto;
+    margin-bottom:18px;
+    border-radius:18px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:30px;
+    color:#fff;
+    background:linear-gradient(135deg,#C1121F,#D62839);
+    transition:.35s;
+}
+
+.highlight-card:nth-child(even) .highlight-icon{
+    background:linear-gradient(135deg,#031436,#123A82);
+}
+
+.highlight-card:hover .highlight-icon{
+    transform:rotate(-8deg) scale(1.08);
+}
+
+.highlight-card h5{
+    color:#031436;
+    font-weight:700;
+    margin-bottom:12px;
+}
+
+.highlight-card p{
+    color:#6b7280;
+    line-height:1.7;
+    margin-bottom:0;
+    font-size:.95rem;
+}
+
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#123A82;
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-track{
+    background:#edf2f8;
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width:1200px){
+
+    .dashboard-hero{
+        padding:35px;
+    }
+
+    .dashboard-hero h1{
+        font-size:2.2rem;
+    }
+
+    .impact-left h2{
+        font-size:1.8rem;
+    }
+
+}
+
+
+@media (max-width:992px){
+
+    .dashboard-page{
+        padding:20px;
+    }
+
+    .dashboard-hero{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .hero-badge{
+        width:150px;
+        height:150px;
+    }
+
+    .impact-card{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .impact-right{
+        width:100%;
+    }
+
+}
+
+
+@media (max-width:768px){
+
+    .dashboard-page{
+        padding:15px;
+    }
+
+    .dashboard-hero{
+        padding:28px;
+    }
+
+    .dashboard-hero h1{
+        font-size:1.9rem;
+    }
+
+    .dashboard-hero p{
+        font-size:.95rem;
+    }
+
+    .hero-badge{
+        width:130px;
+        height:130px;
+    }
+
+    .hero-badge svg{
+        font-size:34px;
+    }
+
+    .stat-card{
+        padding:20px;
+    }
+
+    .stat-card h3{
+        font-size:1.7rem;
+    }
+
+    .stat-icon{
+        width:60px;
+        height:60px;
+        font-size:24px;
+    }
+
+    .impact-card{
+        padding:28px;
+    }
+
+    .impact-right{
+        grid-template-columns:1fr;
+    }
+
+    .highlight-card{
+        padding:24px;
+    }
+
+}
+
+
+@media (max-width:576px){
+
+    .dashboard-page{
+        padding:12px;
+    }
+
+    .dashboard-hero{
+        border-radius:18px;
+        padding:22px;
+    }
+
+    .hero-tag{
+        font-size:.75rem;
+    }
+
+    .dashboard-hero h1{
+        font-size:1.6rem;
+    }
+
+    .hero-badge{
+        width:110px;
+        height:110px;
+        align-self:center;
+    }
+
+    .hero-badge span{
+        font-size:.75rem;
+    }
+
+    .section-title{
+        text-align:center;
+    }
+
+    .stat-card{
+        padding:18px;
+    }
+
+    .action-card{
+        padding:20px;
+    }
+
+    .impact-card{
+        padding:22px;
+        border-radius:18px;
+    }
+
+    .impact-left{
+        text-align:center;
+    }
+
+    .impact-icon{
+        margin:auto;
+        margin-bottom:20px;
+    }
+
+    .impact-left p{
+        max-width:100%;
+    }
+
+    .impact-right{
+        gap:15px;
+    }
+
+    .impact-box{
+        padding:18px;
+    }
+
+    .highlight-card{
+        text-align:center;
+    }
+
+}

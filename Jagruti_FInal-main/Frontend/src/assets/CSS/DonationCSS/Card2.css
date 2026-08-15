@@ -1,0 +1,149 @@
+/* ===========================
+   SECTION
+=========================== */
+
+.impact-section{
+    padding-top:62px;
+    padding-bottom: 50px;
+    background:#fff;
+}
+
+/* ===========================
+   TITLE
+=========================== */
+
+.impact-title{
+    text-align:center;
+    font-family:"Poppins",sans-serif;
+    font-size:40px;
+    font-weight:700;
+    color:#08154A;
+    margin-bottom:12px;
+}
+
+.impact-line{
+    width:65px;
+    height:4px;
+    margin:0 auto 55px;
+    background:#D61114;
+    border-radius:50px;
+}
+
+/* ===========================
+   CARD
+=========================== */
+
+.impact-card{
+
+    height:100%;
+
+    padding:35px 25px;
+
+    border-radius:18px;
+
+    background:#F4F6FF;
+
+    text-align:center;
+
+    transition:.3s;
+}
+
+.pink{
+    background:#FFF3F3;
+}
+
+.impact-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+}
+
+/* ===========================
+   ICON
+=========================== */
+
+.impact-icon{
+
+    width:60px;
+    height:60px;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    margin:0 auto 25px;
+
+    color:white;
+}
+
+.blue{
+    background:#040E3B;
+}
+
+.red{
+    background: #D61114;
+}
+.impact-icon svg{
+    font-size:24px;
+}
+
+/* ===========================
+   CONTENT
+=========================== */
+
+.impact-card h3{
+
+    font-family:"Poppins";
+
+    font-size:42px;
+
+    font-weight:700;
+
+    color:#08154A;
+
+    margin-bottom:16px;
+}
+
+.impact-card p{
+
+    font-family:"Inter";
+
+    font-size:16px;
+
+    line-height:1.8;
+
+    color:#08154A;
+
+    margin:0;
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:991px){
+
+.impact-section{
+    padding:70px 0;
+}
+
+.impact-title{
+    font-size:30px;
+}
+
+.impact-card{
+    padding:28px;
+}
+
+.impact-card h3{
+    font-size:34px;
+}
+
+.impact-card p{
+    font-size:15px;
+}
+
+}

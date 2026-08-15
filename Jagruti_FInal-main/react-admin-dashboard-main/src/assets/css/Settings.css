@@ -1,0 +1,254 @@
+:root {
+  --navy: #0B2C6B;
+  --dark: #031436;
+  --red: #E53935;
+  --red-hover: #C62828;
+  --light-red: #FFF1F0;
+  --light-navy: #EEF3FA;
+  --bg: #F7F8FC;
+  --text: #172033;
+  --muted: #64748B;
+  --border: #E5EAF1;
+  --green: #10B981;
+  --light-green: #ECFDF5;
+  --white: #FFFFFF;
+}
+
+.settings-page {
+  min-height: 100vh;
+  background: var(--bg);
+  padding: 24px;
+}
+
+/* Header Banner */
+.settings-hero {
+  background: linear-gradient(135deg, var(--dark), var(--navy));
+  color: var(--white);
+  border-radius: 16px;
+  padding: 24px 28px;
+  margin-bottom: 20px;
+}
+
+.hero-label {
+  color: #FCA5A5;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.settings-hero h1 {
+  font-size: 24px;
+  font-weight: 800;
+  margin: 4px 0;
+}
+
+.settings-hero p {
+  color: #D7E0EF;
+  font-size: 13px;
+  margin: 0;
+}
+
+/* Settings Container Card */
+.settings-card {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--white);
+  box-shadow: 0 4px 20px rgba(3, 20, 54, 0.04);
+}
+
+/* Sidebar Menu */
+.settings-sidebar {
+  background: #FAFAFC;
+  padding: 20px 14px;
+  border-right: 1px solid var(--border);
+  height: 100%;
+}
+
+.settings-menu {
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 12px 14px;
+  margin-bottom: 6px;
+  border-radius: 10px;
+  text-align: left;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.2s ease-in-out;
+}
+
+.settings-menu:hover {
+  background: var(--light-navy);
+  color: var(--navy);
+}
+
+.settings-menu.active {
+  background: var(--light-red);
+  color: var(--red);
+}
+
+/* Content Panel */
+.settings-content {
+  padding: 28px 32px;
+  background: var(--white);
+}
+
+.settings-heading {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 2px;
+}
+
+.settings-subheading {
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+/* Section Box Container */
+.setting-box {
+  background: #FAFBFD;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 20px;
+  height: 100%;
+}
+
+.setting-box-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 4px;
+}
+
+.setting-box-desc {
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+/* Form Controls */
+.settings-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 6px;
+}
+
+.settings-input {
+  font-size: 12px;
+  border-radius: 8px;
+  padding: 9px 12px;
+  border: 1px solid var(--border);
+  box-shadow: none !important;
+  color: var(--text);
+  background: var(--white);
+}
+
+.settings-input:focus {
+  border-color: var(--navy);
+}
+
+.form-check-input:checked {
+  background-color: var(--red);
+  border-color: var(--red);
+}
+
+/* 2FA Badges & Codes */
+.status-pill {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.status-pill.enabled {
+  background: var(--light-green);
+  color: var(--green);
+}
+
+.status-pill.disabled {
+  background: var(--light-red);
+  color: var(--red);
+}
+
+.recovery-code {
+  background: #F1F5F9;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-family: monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--dark);
+  text-align: center;
+}
+
+/* Save / Action Buttons */
+.save-button {
+  background: var(--red);
+  border: none;
+  border-radius: 8px;
+  padding: 9px 20px;
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--white);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.save-button:hover {
+  background: var(--red-hover);
+}
+
+.outline-btn {
+  border: 1px solid var(--border);
+  background: var(--white);
+  color: var(--dark);
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.outline-btn:hover {
+  background: var(--light-navy);
+  color: var(--navy);
+}
+
+@media (max-width: 767px) {
+  .settings-page {
+    padding: 12px;
+  }
+  .settings-sidebar {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding: 12px;
+  }
+  .settings-sidebar-inner {
+    display: flex;
+    overflow-x: auto;
+    gap: 6px;
+  }
+  .settings-menu {
+    width: auto;
+    white-space: nowrap;
+  }
+  .settings-content {
+    padding: 20px 16px;
+  }
+}

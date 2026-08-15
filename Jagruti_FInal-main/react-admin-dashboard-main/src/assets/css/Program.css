@@ -1,0 +1,290 @@
+:root {
+  --navy: #0B2C6B;
+  --dark: #031436;
+  --red: #E53935;
+  --light-red: #FFF1F0;
+  --light-navy: #EEF3FA;
+  --bg: #F7F8FC;
+  --text: #172033;
+  --muted: #64748B;
+  --border: #E5EAF1;
+  --green: #10B981;
+  --light-green: #ECFDF5;
+}
+
+.programs-page {
+  min-height: 100vh;
+  background: var(--bg);
+  padding: 30px;
+}
+
+.programs-hero {
+  background: linear-gradient(135deg, var(--dark), var(--navy));
+  color: white;
+  border-radius: 20px;
+  padding: 32px;
+  margin-bottom: 25px;
+}
+
+.hero-label {
+  color: #FCA5A5;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.programs-hero h1 {
+  font-size: 30px;
+  font-weight: 800;
+  margin: 6px 0;
+}
+
+.programs-hero p {
+  color: #D7E0EF;
+  font-size: 13px;
+  margin: 0;
+}
+
+.primary-btn,
+.primary-btn:hover {
+  background: var(--red);
+  border-color: var(--red);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.primary-btn:hover {
+  background: var(--dark);
+  border-color: var(--dark);
+}
+
+.stat-card {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  transition: 0.3s;
+  background: white;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px #03143612;
+}
+
+.stat-icon {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+}
+
+.navy-icon {
+  background: var(--light-navy);
+  color: var(--navy);
+}
+
+.red-icon {
+  background: var(--light-red);
+  color: var(--red);
+}
+
+.stat-number {
+  color: var(--dark);
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.stat-label {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.section-title {
+  color: var(--dark);
+  font-size: 22px;
+  font-weight: 800;
+  margin: 35px 0 5px;
+}
+
+.filter-box {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 15px;
+  margin: 22px 0;
+}
+
+.filter-control {
+  font-size: 12px;
+  box-shadow: none !important;
+}
+
+/* Proper Table Styling */
+.table-wrapper {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.custom-program-table th {
+  background: var(--light-navy);
+  color: var(--navy);
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 14px 18px;
+  border: 0;
+}
+
+.custom-program-table td {
+  vertical-align: middle;
+  padding: 14px 18px;
+  font-size: 12px;
+  border-color: var(--border);
+}
+
+.program-img-thumb {
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-right: 12px;
+}
+
+.program-table-title {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 2px;
+}
+
+.program-table-desc {
+  font-size: 11px;
+  color: var(--muted);
+  max-width: 280px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.category-badge-pill {
+  background: var(--light-navy);
+  color: var(--navy);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 15px;
+  display: inline-block;
+}
+
+.status-badge {
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-size: 10px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.status-badge.active {
+  background: var(--light-navy);
+  color: var(--navy);
+}
+
+.status-badge.upcoming {
+  background: var(--light-red);
+  color: var(--red);
+}
+
+.status-badge.completed {
+  background: #F1F5F9;
+  color: #64748B;
+}
+
+.actions {
+  display: flex;
+  gap: 6px;
+  justify-content: flex-end;
+}
+
+.action-btn {
+  background: #F8FAFC;
+  border: 1px solid var(--border);
+  color: var(--dark);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: 0.2s;
+}
+
+.action-btn:hover {
+  background: var(--light-navy);
+  color: var(--navy);
+  border-color: var(--navy);
+}
+
+.action-btn.delete-btn:hover {
+  background: var(--light-red);
+  color: var(--red);
+  border-color: var(--red);
+}
+
+.modal-label {
+  color: var(--dark);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.modal-control {
+  font-size: 12px;
+  box-shadow: none !important;
+}
+/* Removes outer table scrollbar and forces exact layout fitting */
+.no-scroll-wrapper {
+  overflow: hidden !important;
+  width: 100%;
+}
+
+.fit-table {
+  width: 100% !important;
+  table-layout: fixed; /* Forces fixed widths so columns fit without pushing horizontal scroll */
+}
+
+/* Ensure text truncates with ellipsis if it gets too long */
+.text-truncate-container {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.program-table-title {
+  font-weight: 600;
+  color: #1e293b;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.program-table-desc {
+  font-size: 13px;
+  color: #64748b;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.program-img-thumb {
+  width: 50px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+@media(max-width: 768px) {
+  .programs-page {
+    padding: 15px;
+  }
+}

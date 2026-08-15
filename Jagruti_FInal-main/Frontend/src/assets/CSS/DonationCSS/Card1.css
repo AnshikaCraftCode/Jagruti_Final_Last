@@ -1,0 +1,156 @@
+/* ===========================
+   SECTION
+=========================== */
+
+.donation-section{
+    background:#fff;
+    padding-bottom: 40px;
+}
+
+/* ===========================
+   TITLE
+=========================== */
+
+.section-heading{
+    text-align:center;
+    font-family:"Poppins",sans-serif;
+    font-size:40px;
+    font-weight:700;
+    color:#08154A;
+    margin-bottom:12px;
+}
+
+.heading-line{
+    width:70px;
+    height:4px;
+    margin:0 auto 55px;
+
+    background:#D61114;
+    border-radius:50px;
+}
+
+/* ===========================
+   CARD
+=========================== */
+
+.donation-card{
+
+    height:100%;
+
+    padding:35px;
+
+    border-radius:18px;
+
+    background:#F4F6FF;
+
+    transition:.3s;
+
+}
+
+.healthcare{
+    background:#FFF3F3;
+}
+
+.donation-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+
+}
+
+/* ===========================
+   ICON
+=========================== */
+
+.icon-circle{
+
+    width:60px;
+    height:60px;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    margin-bottom:25px;
+
+    color:white;
+}
+
+.blue{
+    background:#6D8CFF;
+}
+
+.red{
+    background:#FF7A7A;
+}
+
+.icon-circle svg{
+    font-size:26px;
+}
+
+/* ===========================
+   CONTENT
+=========================== */
+
+.donation-card h4{
+
+    font-family:"Poppins";
+
+    font-size:24px;
+
+    font-weight:600;
+
+    color:#08154A;
+
+    margin-bottom:18px;
+
+}
+
+.donation-card p{
+
+    font-family:"Inter";
+
+    font-size:17px;
+
+    line-height:1.8;
+
+    color:#08154A;
+
+    margin:0;
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:991px){
+
+
+
+.section-heading{
+    font-size:30px;
+}
+
+.donation-card{
+
+    padding:28px;
+
+}
+
+.donation-card h4{
+
+    font-size:22px;
+
+}
+
+.donation-card p{
+
+    font-size:15px;
+
+}
+
+}

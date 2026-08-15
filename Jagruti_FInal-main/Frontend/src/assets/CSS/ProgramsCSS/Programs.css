@@ -1,0 +1,455 @@
+/* .programs-section {
+  width: min(91%, 1200px);
+  margin: 0 auto;
+  padding: 38px 0 22px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.section-heading h2 {
+  margin: 0;
+  color: #07133d;
+  font: 700 clamp(27px, 3vw, 35px)/1.2 'Inter', sans-serif;
+  letter-spacing: -0.7px;
+}
+
+.section-heading span {
+  width: 55px;
+  height: 3px;
+  margin-top: 9px;
+  border-radius: 10px;
+  background: #dc293b;
+}
+
+.programs-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.program-card {
+  --accent: #6474db;
+  --surface: #f4f5ff;
+  --border: #dfe2f7;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 22px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: 0 4px 14px rgba(9, 22, 61, 0.035);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.program-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent);
+  box-shadow: 0 20px 36px rgba(9, 22, 61, 0.14);
+}
+
+.program-card--green {
+  --accent: #399d43;
+  --surface: #f4faf3;
+  --border: #d9ecd9;
+}
+
+.program-card--pink {
+  --accent: #f06f80;
+  --surface: #fff5f5;
+  --border: #f4dfe1;
+}
+
+.program-card--purple {
+  --accent: #9168d8;
+  --surface: #f8f5ff;
+  --border: #e7def5;
+}
+
+.program-card__header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.program-card__icon {
+  display: grid;
+  flex: 0 0 54px;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 5px 12px color-mix(in srgb, var(--accent) 22%, transparent);
+  color: #ffffff;
+  font-size: 24px;
+  place-items: center;
+  transition: transform 0.35s ease;
+}
+
+.program-card:hover .program-card__icon {
+  transform: rotate(-8deg) scale(1.08);
+}
+
+.program-card h3 {
+  margin: 0;
+  color: #07133d;
+  font: 700 clamp(19px, 2vw, 23px)/1.2 'Inter', sans-serif;
+  letter-spacing: -0.4px;
+}
+
+.program-card__underline {
+  display: block;
+  width: 38px;
+  height: 3px;
+  margin-top: 7px;
+  border-radius: 10px;
+  background: var(--accent);
+}
+
+.program-card__image {
+  position: relative;
+  z-index: 1;
+  min-height: 190px;
+  margin-bottom: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(7, 19, 61, 0.06);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.program-card__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 190px;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+
+.program-card:hover .program-card__image img {
+  transform: scale(1.06);
+}
+
+.program-card__body {
+  position: relative;
+  z-index: 2;
+}
+
+.program-card__body > p {
+  margin: 0 0 14px;
+  color: #26314e;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.program-card ul {
+  display: grid;
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.program-card li {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  color: #25304c;
+  font-size: 12.5px;
+  line-height: 1.3;
+}
+
+.program-card li svg {
+  flex: 0 0 auto;
+  margin-top: 1px;
+  color: var(--accent);
+  font-size: 13px;
+}
+
+.program-card__watermark {
+  position: absolute;
+  z-index: 0;
+  top: 18px;
+  right: 18px;
+  width: 72px;
+  height: 72px;
+  color: color-mix(in srgb, var(--accent) 9%, transparent);
+}
+
+@media (max-width: 900px) {
+  .programs-list {
+    gap: 22px;
+  }
+
+  .program-card__image,
+  .program-card__image img {
+    min-height: 170px;
+  }
+}
+
+@media (max-width: 780px) {
+  .programs-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .programs-section {
+    width: min(92%, 520px);
+    padding-top: 32px;
+  }
+
+  .program-card {
+    padding: 16px;
+  }
+
+  .program-card__image,
+  .program-card__image img {
+    min-height: 200px;
+  }
+
+  .program-card__body > p {
+    font-size: 13px;
+  }
+
+  .program-card li {
+    font-size: 12.5px;
+  }
+} */
+ .programs-section {
+  width: min(91%, 1200px);
+  margin: 0 auto;
+  padding: 38px 0 22px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.section-heading h2 {
+  margin: 0;
+  color: #07133d;
+  font: 700 clamp(27px, 3vw, 35px)/1.2 'Inter', sans-serif;
+  letter-spacing: -0.7px;
+}
+
+.section-heading span {
+  width: 55px;
+  height: 3px;
+  margin-top: 9px;
+  border-radius: 10px;
+  background: #dc293b;
+}
+
+.programs-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.program-card {
+  --accent: #dc293b;
+  --surface: #fff5f6;
+  --border: #f6d9dd;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  height: auto;
+  min-height: 100%;
+
+  padding: 22px;
+
+  overflow: visible;
+
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface);
+
+  box-shadow: 0 4px 14px rgba(9, 22, 61, 0.035);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+.program-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent);
+  box-shadow: 0 20px 36px rgba(9, 22, 61, 0.14);
+}
+
+.program-card--navy {
+  --accent: #07133d;
+  --surface: #f2f4f9;
+  --border: #dde1ec;
+}
+
+.program-card__header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.program-card__icon {
+  display: grid;
+  flex: 0 0 54px;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 5px 12px color-mix(in srgb, var(--accent) 22%, transparent);
+  color: #ffffff;
+  font-size: 24px;
+  place-items: center;
+  transition: transform 0.35s ease;
+}
+
+.program-card:hover .program-card__icon {
+  transform: rotate(-8deg) scale(1.08);
+}
+
+.program-card h3 {
+  margin: 0;
+  color: #07133d;
+  font: 700 clamp(19px, 2vw, 23px)/1.2 'Inter', sans-serif;
+  letter-spacing: -0.4px;
+}
+
+.program-card__underline {
+  display: block;
+  width: 38px;
+  height: 3px;
+  margin-top: 7px;
+  border-radius: 10px;
+  background: var(--accent);
+}
+
+.program-card__image {
+  position: relative;
+  z-index: 1;
+  min-height: 190px;
+  margin-bottom: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(7, 19, 61, 0.06);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.program-card__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 190px;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+
+.program-card:hover .program-card__image img {
+  transform: scale(1.06);
+}
+
+.program-card__body {
+  position: relative;
+  z-index: 2;
+}
+
+.program-card__body > p {
+  margin: 0 0 14px;
+  color: #26314e;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.program-card ul {
+  display: grid;
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.program-card li {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  color: #25304c;
+  font-size: 12.5px;
+  line-height: 1.3;
+}
+
+.program-card li svg {
+  flex: 0 0 auto;
+  margin-top: 1px;
+  color: var(--accent);
+  font-size: 13px;
+}
+
+.program-card__watermark {
+  position: absolute;
+  z-index: 0;
+  top: 18px;
+  right: 18px;
+  width: 72px;
+  height: 72px;
+  color: color-mix(in srgb, var(--accent) 9%, transparent);
+}
+
+@media (max-width: 900px) {
+  .programs-list {
+    gap: 22px;
+  }
+
+  .program-card__image,
+  .program-card__image img {
+    min-height: 170px;
+  }
+}
+
+@media (max-width: 780px) {
+  .programs-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .programs-section {
+    width: min(92%, 520px);
+    padding-top: 32px;
+  }
+
+  .program-card {
+    padding: 16px;
+  }
+
+  .program-card__image,
+  .program-card__image img {
+    min-height: 200px;
+  }
+
+  .program-card__body > p {
+    font-size: 13px;
+  }
+
+  .program-card li {
+    font-size: 12.5px;
+  }
+}
