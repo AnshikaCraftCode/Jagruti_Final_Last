@@ -1,12 +1,24 @@
-const contact = require("../models/ContactModel");
+const Contact = require("../models/ContactModel");
 
-// POST API - Public Contact Form
+// ======================================================
+// ADD CONTACT - PUBLIC
+// ======================================================
+
 const add = async (req, res, next) => {
-  const { Name, Email, Phone, Subject, Message, City, type } = req.body;
   try {
-    const data = new contact({
+    const {
       Name,
-      Email: Email.toLowerCase().trim(),
+      Email,
+      Phone,
+      Subject,
+      Message,
+      City,
+      type,
+    } = req.body;
+
+    const data = await Contact.create({
+      Name,
+      Email,
       Phone,
       Subject,
       Message,
@@ -14,8 +26,7 @@ const add = async (req, res, next) => {
       type: type || "Contact",
     });
 
-    await data.save();
-    return res.status(201).json({
+    res.status(201).json({
       success: true,
       message: "Contact information added successfully!",
       data,
@@ -25,10 +36,16 @@ const add = async (req, res, next) => {
   }
 };
 
-// GET API - Admin View Enquiries
+// ======================================================
+// GET ALL CONTACTS - ADMIN ONLY
+// ======================================================
+
 const getData = async (req, res, next) => {
   try {
-    const data = await contact.find().sort({ createdAt: -1 });
+    const data = await Contact.find()
+      .sort({ createdAt: -1 })
+      .lean();
+
     res.status(200).json({
       success: true,
       count: data.length,
@@ -39,13 +56,21 @@ const getData = async (req, res, next) => {
   }
 };
 
-// DELETE API - Admin Delete Enquiry
+// ======================================================
+// DELETE CONTACT - ADMIN ONLY
+// ======================================================
+
 const deleteData = async (req, res, next) => {
   try {
-    const data = await contact.deleteOne({ _id: req.params._id });
+    const { _id } = req.params;
 
-    if (data.deletedCount === 0) {
-      return res.status(404).json({ success: false, message: "Contact not found" });
+    const deleted = await Contact.findByIdAndDelete(_id);
+
+    if (!deleted) {
+      return res.status(404).json({
+        success: false,
+        message: "Contact not found",
+      });
     }
 
     res.status(200).json({
@@ -57,20 +82,42 @@ const deleteData = async (req, res, next) => {
   }
 };
 
-// Search API - Admin Search
+// ======================================================
+// SEARCH CONTACTS - ADMIN ONLY
+// ======================================================
+
 const searchContact = async (req, res, next) => {
   try {
     const { search } = req.query;
 
+    // No search term → return all contacts
     if (!search || typeof search !== "string") {
-      const data = await contact.find().sort({ createdAt: -1 });
-      return res.status(200).json({ success: true, data });
+      const data = await Contact.find()
+        .sort({ createdAt: -1 })
+        .lean();
+
+      return res.status(200).json({
+        success: true,
+        count: data.length,
+        data,
+      });
     }
 
-    // Escape regex special characters to prevent regex injection attacks
-    const escapedSearch = search.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    // Limit search length
+    if (search.length > 100) {
+      return res.status(400).json({
+        success: false,
+        message: "Search query is too long",
+      });
+    }
 
-    const data = await contact.find({
+    // Escape regex special characters
+    const escapedSearch = search.replace(
+      /[.*+?^${}()|[\]\\]/g,
+      "\\$&"
+    );
+
+    const data = await Contact.find({
       $or: [
         { Name: { $regex: escapedSearch, $options: "i" } },
         { Email: { $regex: escapedSearch, $options: "i" } },
@@ -79,7 +126,9 @@ const searchContact = async (req, res, next) => {
         { City: { $regex: escapedSearch, $options: "i" } },
         { type: { $regex: escapedSearch, $options: "i" } },
       ],
-    }).sort({ createdAt: -1 });
+    })
+      .sort({ createdAt: -1 })
+      .lean();
 
     res.status(200).json({
       success: true,
@@ -91,17 +140,28 @@ const searchContact = async (req, res, next) => {
   }
 };
 
-// Mark As Read API - Admin Action
+// ======================================================
+// MARK AS READ - ADMIN ONLY
+// ======================================================
+
 const markAsRead = async (req, res, next) => {
   try {
-    const updated = await contact.findByIdAndUpdate(
-      req.params._id,
+    const { _id } = req.params;
+
+    const updated = await Contact.findByIdAndUpdate(
+      _id,
       { status: "Read" },
-      { new: true }
-    );
+      {
+        new: true,
+        runValidators: true,
+      }
+    ).lean();
 
     if (!updated) {
-      return res.status(404).json({ success: false, message: "Contact inquiry not found" });
+      return res.status(404).json({
+        success: false,
+        message: "Contact inquiry not found",
+      });
     }
 
     res.status(200).json({
@@ -114,4 +174,10 @@ const markAsRead = async (req, res, next) => {
   }
 };
 
-module.exports = { add, getData, deleteData, searchContact, markAsRead };
+module.exports = {
+  add,
+  getData,
+  deleteData,
+  searchContact,
+  markAsRead,
+};

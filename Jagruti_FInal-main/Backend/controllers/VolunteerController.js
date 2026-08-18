@@ -1,31 +1,37 @@
 const Volunteer = require("../models/VolunteerModel");
 
-// Add Volunteer
+// Add Volunteer - Public
 const addVolunteer = async (req, res, next) => {
   try {
-const {
-  fullName,
-  email,
-  phone,
-  city,
-  interest,
-  message,
-} = req.body;
+    const {
+      fullName,
+      email,
+      phone,
+      city,
+      interest,
+      message,
+    } = req.body;
 
-const volunteerData = {
-  fullName: fullName.trim(),
-  email: email.toLowerCase().trim(),
-  phone: phone.trim(),
-  city: city?.trim() || "",
-  interest: interest?.trim() || "",
-  message: message?.trim() || "",
-};
-    const volunteer = await Volunteer.create(volunteerData);
+    // Required field validation
+    if (!fullName || !email || !phone) {
+      return res.status(400).json({
+        success: false,
+        message: "Full name, email and phone are required",
+      });
+    }
+
+    const volunteer = await Volunteer.create({
+      fullName,
+      email,
+      phone,
+      city,
+      interest,
+      message,
+    });
 
     res.status(201).json({
       success: true,
       message: "Volunteer Registered Successfully",
-      volunteer,
       data: volunteer,
     });
   } catch (error) {
@@ -33,15 +39,16 @@ const volunteerData = {
   }
 };
 
-// Get All Volunteers (Admin Only)
+// Get All Volunteers - Admin Only
 const getVolunteer = async (req, res, next) => {
   try {
-    const volunteers = await Volunteer.find().sort({ createdAt: -1 });
+    const volunteers = await Volunteer.find()
+      .sort({ createdAt: -1 })
+      .lean();
 
     res.status(200).json({
       success: true,
       count: volunteers.length,
-      volunteers,
       data: volunteers,
     });
   } catch (error) {
@@ -49,10 +56,11 @@ const getVolunteer = async (req, res, next) => {
   }
 };
 
-// Delete Volunteer (Admin Only)
+// Delete Volunteer - Admin Only
 const deleteVolunteer = async (req, res, next) => {
   try {
     const { id } = req.params;
+
     const deleted = await Volunteer.findByIdAndDelete(id);
 
     if (!deleted) {
